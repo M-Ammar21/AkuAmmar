@@ -1,0 +1,29 @@
+{
+  "name": "portofolio",
+  "version": "1.0.0",
+  "description": "React portfolio frontend",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "spec:lint": "redocly lint openapi.yaml",
+    "spec:preview": "redocly preview-docs openapi.yaml"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@redocly/cli": "^2.46.1",
+    "@vitejs/plugin-react": "^6.0.5",
+    "vite": "^8.2.1"
+  },
+  "dependencies": {
+    "framer-motion": "^13.1.0",
+    "gsap": "^3.15.0",
+    "lenis": "^1.3.26",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "private": true
+}

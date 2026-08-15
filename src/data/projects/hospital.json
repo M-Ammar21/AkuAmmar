@@ -1,0 +1,48 @@
+{
+  "title": "Hospital Internal System",
+  "eyebrow": "Internal Tools",
+  "description": "Sistem internal rumah sakit untuk membantu payroll, HRD, pendaftaran pasien, kontrol ulang, general consent, dan rapor dokter.",
+  "tags": [
+    "Laravel",
+    "SQL",
+    "JavaScript",
+    "Operational Flow",
+    "Internal System"
+  ],
+  "githubHref": "https://github.com/MAmmar21",
+  "image": "assets/photos/Hospital/General Consent.png",
+  "imageAlt": "Preview Hospital Internal System",
+  "placeholder": "Hospital internal workflow",
+  "media": [
+    {
+      "type": "image",
+      "src": "assets/photos/Hospital/General Consent.png",
+      "alt": "Preview general consent rumah sakit"
+    },
+    {
+      "type": "image",
+      "src": "assets/photos/Hospital/screencapture-it-rsmmptk-kontrol-ulang-2026-08-14-09_11_17.png",
+      "alt": "Preview kontrol ulang rumah sakit"
+    },
+    {
+      "type": "image",
+      "src": "assets/photos/Hospital/Rapor Dokter/screencapture-app-rsmmptk-doctor-raport-2026-08-14-09_03_19.png",
+      "alt": "Preview rapor dokter rumah sakit"
+    },
+    {
+      "type": "image",
+      "src": "assets/photos/Hospital/Rapor Dokter/Untitled-1_01.gif",
+      "alt": "Animasi rapor dokter bagian pertama"
+    },
+    {
+      "type": "image",
+      "src": "assets/photos/Hospital/Rapor Dokter/Untitled-1_02.gif",
+      "alt": "Animasi rapor dokter bagian kedua"
+    }
+  ],
+  "details": [
+    "Merapikan proses input dan pencarian data pasien pada alur internal.",
+    "Mendukung kebutuhan dokumen general consent, kontrol ulang, dan rapor dokter.",
+    "Dibangun dari komunikasi langsung dengan pengguna operasional harian."
+  ]
+}

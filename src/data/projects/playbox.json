@@ -1,0 +1,33 @@
+{
+  "title": "Playbox Rental System",
+  "eyebrow": "Booking & Operations",
+  "description": "Sistem rental PlayStation delivery untuk booking, jadwal, inventory unit, kurir, dan fondasi chatbot WhatsApp.",
+  "tags": [
+    "Laravel",
+    "Inertia React",
+    "Tailwind CSS",
+    "MapLibre",
+    "Booking Flow"
+  ],
+  "githubHref": "https://github.com/MAmmar21",
+  "image": "assets/photos/Playbox/image.png",
+  "imageAlt": "Preview dashboard Playbox Rental System",
+  "placeholder": "Playbox booking dan operasional",
+  "media": [
+    {
+      "type": "image",
+      "src": "assets/photos/Playbox/image.png",
+      "alt": "Preview halaman Playbox Rental System"
+    },
+    {
+      "type": "video",
+      "src": "assets/photos/Playbox/Playbox/WhatsApp Video 2026-06-18 at 12.35.54.mp4",
+      "alt": "Video demo Playbox Rental System"
+    }
+  ],
+  "details": [
+    "Form pemesanan menyimpan customer, paket, jadwal, alamat, dan titik map.",
+    "Admin diarahkan ke dashboard, canvas jadwal, inventory unit, dan kurir.",
+    "Chatbot WhatsApp disiapkan untuk intake booking, follow up payment, dan repeat order."
+  ]
+}

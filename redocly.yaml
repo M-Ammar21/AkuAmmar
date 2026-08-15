@@ -1,0 +1,5 @@
+extends:
+  - recommended
+apis:
+  main:
+    root: openapi.yaml

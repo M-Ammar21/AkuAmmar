@@ -1,0 +1,45 @@
+openapi: 3.1.0
+info:
+  title: Portofolio API
+  version: 1.0.0
+  description: API specification for the Portofolio project.
+  license:
+    name: UNLICENSED
+    identifier: UNLICENSED
+servers:
+  - url: '{scheme}://{host}'
+    description: Configurable API server
+    variables:
+      scheme:
+        default: http
+        enum:
+          - http
+          - https
+      host:
+        default: localhost
+security: []
+paths:
+  /health:
+    get:
+      summary: Health check
+      operationId: getHealth
+      security: []
+      responses:
+        '200':
+          description: Application is running
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - status
+                properties:
+                  status:
+                    type: string
+                    example: ok
+        '404':
+          description: Health endpoint was not found
+        '500':
+          description: Server error
+components:
+  schemas: {}

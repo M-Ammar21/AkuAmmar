@@ -1,0 +1,196 @@
+﻿{
+  "navItems": [
+    {
+      "label": "Profile",
+      "href": "#tentang",
+      "title": "Profile"
+    },
+    {
+      "label": "Hire Me",
+      "href": "mailto:ammareww512@gmail.com",
+      "title": "Hire Me"
+    },
+    {
+      "label": "Project",
+      "href": "#proyek",
+      "title": "Project"
+    }
+  ],
+  "hero": {
+    "eyebrow": "Halo, saya Muhammad Ammar",
+    "titlePrefix": "Web",
+    "titleAccent": "Developer",
+    "description": " Suka bikin website yang simpel, rapi, dan enak dipakai.",
+    "image": "assets/photos/Foto%20Full%20Body.png",
+    "imageAlt": "Foto full body Muhammad Ammar",
+    "cvHref": "assets/documents/cv-muhammad-ammar.pdf",
+    "stats": [
+      {
+        "label": "Experience",
+        "value": "1+ Tahun",
+        "color": "bg-sticker-yellow",
+        "className": ""
+      },
+      {
+        "label": "Specialization",
+        "value": "Web Apps & IT Support",
+        "color": "bg-powder-blue",
+        "className": "ml-[-38px] mt-7 rotate-[-2deg]"
+      }
+    ]
+  },
+  "highlights": [
+    {
+      "label": "Laravel",
+      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg"
+    },
+    {
+      "label": "React",
+      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+    },
+    {
+      "label": "REST API",
+      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"
+    },
+    {
+      "label": "SQL",
+      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+    },
+    {
+      "label": "Google Cloud Run",
+      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg"
+    },
+    {
+      "label": "Technical Support",
+      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows11/windows11-original.svg"
+    }
+  ],
+  "about": {
+    "eyebrow": "Tentang Saya",
+    "title": "Saya suka membangun web yang rapi, jelas, dan nyaman dipakai.",
+    "paragraphs": [
+      "Saya lulusan Teknik Informatika Universitas Brawijaya yang menikmati proses mengubah ide dan kebutuhan pengguna menjadi aplikasi web yang sederhana digunakan.",
+      "Dalam pengalaman kerja, saya banyak berurusan dengan sistem internal seperti payroll, HRD, pendaftaran pasien, janji temu, dan laporan dokter. Saya juga terbiasa mendengarkan kendala pengguna langsung, lalu memperbaikinya dengan pendekatan yang praktis."
+    ]
+  },
+  "experiences": [
+    {
+      "role": "IT Software Staff",
+      "company": "RS Mitra Medika Pontianak",
+      "period": "Mei 2025 - Juli 2026",
+      "color": "bg-sticker-yellow",
+      "description": "Mengembangkan dan memelihara sistem berbasis web untuk meningkatkan efisiensi operasional rumah sakit.",
+      "points": [
+        "Membangun sistem payroll, HRD, pendaftaran pasien, janji temu, serta laporan dokter.",
+        "Menyelesaikan lebih dari 70 laporan kendala teknis setiap bulan.",
+        "Berkomunikasi langsung dengan pengguna untuk memahami kebutuhan sistem."
+      ]
+    },
+    {
+      "role": "Cloud Engineer & Back-End Developer",
+      "company": "PT Dicoding Akademi Indonesia",
+      "period": "Mei 2024 - Juli 2024",
+      "color": "bg-powder-blue",
+      "description": "Terlibat dalam pengembangan sistem rekomendasi pengguna baru untuk Dicoding Academy dan Dicoding Jobs.",
+      "points": [
+        "Mengembangkan tiga API dari model Machine Learning.",
+        "Mengintegrasikan model ke layanan back-end.",
+        "Melakukan deployment API menggunakan Google Cloud Run."
+      ]
+    },
+    {
+      "role": "Cloud Computing Cohort",
+      "company": "Bangkit Academy",
+      "period": "Februari 2024 - Juli 2024",
+      "color": "bg-cotton-pink",
+      "description": "Mempelajari dasar hingga penerapan cloud computing melalui praktik langsung bersama praktisi industri.",
+      "points": [
+        "Mempelajari layanan dan infrastruktur Google Cloud Platform.",
+        "Mengembangkan REST API dan melakukan deployment ke cloud.",
+        "Mempelajari dasar pengelolaan server dan layanan cloud."
+      ]
+    }
+  ],
+  "skillsIntro": {
+    "eyebrow": "Keahlian",
+    "title": "Stack yang saya gunakan untuk membangun produk web.",
+    "description": "Fokus pada Laravel, JavaScript, SQL, cloud deployment, dan sedang memperdalam React, Next.js, serta Golang."
+  },
+  "skills": [
+    {
+      "title": "Back-End",
+      "items": ["PHP", "Laravel", "REST API", "SQL", "Java", "Golang"],
+      "color": ""
+    },
+    {
+      "title": "Front-End",
+      "items": [
+        "HTML",
+        "CSS",
+        "Tailwind CSS",
+        "JavaScript",
+        "React",
+        "Next.js"
+      ],
+      "color": "bg-bone"
+    },
+    {
+      "title": "Cloud & Tools",
+      "items": ["Google Cloud", "Cloud Run", "AWS", "Linux", "GitHub", "Figma"],
+      "color": "bg-powder-blue"
+    },
+    {
+      "title": "Profesional",
+      "items": [
+        "Problem Solving",
+        "Critical Thinking",
+        "Collaboration",
+        "Adaptability"
+      ],
+      "color": "bg-cotton-pink"
+    }
+  ],
+  "education": [
+    {
+      "eyebrow": "Pendidikan",
+      "title": "Universitas Brawijaya",
+      "description": "S1 Teknik Informatika | Agustus 2021 - Januari 2025",
+      "highlight": "IPK 3,61 / 4,00",
+      "color": "bg-acid-lime"
+    },
+    {
+      "eyebrow": "Organisasi",
+      "title": "Head of Creative Media Division",
+      "description": "IMKALBAR Universitas Brawijaya | Juni 2023 - Agustus 2024",
+      "highlight": "Memimpin 8 anggota dan menghasilkan 40+ konten.",
+      "color": ""
+    }
+  ],
+  "contactIntro": {
+    "eyebrow": "Kontak",
+    "title": "Mari bekerja sama.",
+    "description": "Saya terbuka untuk peluang sebagai Web Developer, Back-End Developer, maupun Full-Stack Developer."
+  },
+  "contacts": [
+    {
+      "label": "Email",
+      "value": "ammareww512@gmail.com",
+      "href": "mailto:ammareww512@gmail.com"
+    },
+    {
+      "label": "Telepon",
+      "value": "+62 821-5108-0750",
+      "href": "tel:+6282151080750"
+    },
+    {
+      "label": "LinkedIn",
+      "value": "linkedin.com/in/muhammad-ammar",
+      "href": "https://linkedin.com/in/muhammad-ammar"
+    },
+    {
+      "label": "GitHub",
+      "value": "github.com/MAmmar21",
+      "href": "https://github.com/MAmmar21"
+    }
+  ]
+}

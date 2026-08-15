@@ -1,0 +1,59 @@
+{
+  "title": "Duta Mix Batching Plant",
+  "eyebrow": "Operational System",
+  "description": "Sistem operasional ready-mix untuk menyatukan order, dispatch truk, loading, QC, gate, verifikasi, dan laporan trip.",
+  "tags": [
+    "Laravel",
+    "Inertia React",
+    "Tailwind CSS",
+    "Laravel Reverb",
+    "QC Flow",
+    "Dispatch"
+  ],
+  "githubHref": "https://github.com/MAmmar21",
+  "image": "assets/photos/Batching Plant/Batching Plant/WhatsApp Image 2026-06-18 at 12.35.02.jpeg",
+  "imageAlt": "Preview Duta Mix Batching Plant",
+  "placeholder": "Duta Mix operational workflow",
+  "media": [
+    {
+      "type": "image",
+      "src": "assets/photos/Batching Plant/Batching Plant/WhatsApp Image 2026-06-18 at 12.35.02.jpeg",
+      "alt": "Preview dashboard Duta Mix Batching Plant"
+    },
+    {
+      "type": "video",
+      "src": "assets/photos/Batching Plant/Batching Plant/cursorful-video-1774433478244.mp4",
+      "alt": "Video demo Duta Mix Batching Plant"
+    },
+    {
+      "type": "image",
+      "src": "assets/photos/Batching Plant/Batching Plant/WhatsApp Image 2026-06-18 at 12.35.02 (1).jpeg",
+      "alt": "Preview order dan dispatch Duta Mix"
+    },
+    {
+      "type": "image",
+      "src": "assets/photos/Batching Plant/Batching Plant/WhatsApp Image 2026-06-18 at 12.35.02 (2).jpeg",
+      "alt": "Preview produksi dan QC Duta Mix"
+    },
+    {
+      "type": "image",
+      "src": "assets/photos/Batching Plant/Batching Plant/WhatsApp Image 2026-06-18 at 12.35.03.jpeg",
+      "alt": "Preview gate dan driver Duta Mix"
+    },
+    {
+      "type": "image",
+      "src": "assets/photos/Batching Plant/Batching Plant/WhatsApp Image 2026-06-18 at 12.35.03 (1).jpeg",
+      "alt": "Preview laporan Duta Mix"
+    },
+    {
+      "type": "image",
+      "src": "assets/photos/Batching Plant/Batching Plant/WhatsApp Image 2026-06-18 at 12.35.03 (2).jpeg",
+      "alt": "Preview monitoring Duta Mix"
+    }
+  ],
+  "details": [
+    "Order dipecah menjadi dispatch sesuai kapasitas armada dan jadwal kirim.",
+    "Production, QC, security gate, driver, dan customer membaca status yang sama.",
+    "Verifikasi pengiriman memakai tanda tangan, GPS, audit log, dan reporting."
+  ]
+}
