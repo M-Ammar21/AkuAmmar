@@ -49,5 +49,13 @@ temp/
 # OpenAPI / Redoc generated artifacts
 redoc-static.html
 
+# Large local video assets
+public/assets/videos/*.mp4
+public/assets/videos/*.webm
+public/assets/videos/*.mov
+public/assets/videos/*.avi
+public/assets/videos/*.mkv
+!public/assets/videos/README.md
+
 # Codex local workspace data
 .codex/
