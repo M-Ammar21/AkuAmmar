@@ -22,7 +22,8 @@
     },
     {
       "type": "video",
-      "src": "assets/videos/cursorful-video-1774433478244.mp4",
+      "src": "https://youtu.be/kt7e7XcDw0w",
+      "playbackRate": 2,
       "alt": "Video demo Duta Mix Batching Plant"
     },
     {

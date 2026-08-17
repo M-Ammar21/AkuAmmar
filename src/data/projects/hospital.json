@@ -26,6 +26,16 @@
     },
     {
       "type": "image",
+      "src": "assets/photos/Hospital/screencapture-mitramedikahealthcare-jadwal-Poliklinik-Anak-2026-08-17-11_58_34.png",
+      "alt": "Preview jadwal poliklinik anak rumah sakit"
+    },
+    {
+      "type": "video",
+      "src": "https://youtu.be/bHWVWkFzPGo",
+      "alt": "Video demo Hospital Internal System"
+    },
+    {
+      "type": "image",
       "src": "assets/photos/Hospital/Rapor Dokter/screencapture-app-rsmmptk-doctor-raport-2026-08-14-09_03_19.png",
       "alt": "Preview rapor dokter rumah sakit"
     },

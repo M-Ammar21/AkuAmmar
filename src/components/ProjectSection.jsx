@@ -38,12 +38,87 @@ function isVideoMedia(media) {
   return media?.type === "video" || media?.src?.toLowerCase().endsWith(".mp4");
 }
 
+function getYoutubeEmbedSrc(src) {
+  if (!src) {
+    return null;
+  }
+
+  try {
+    const url = new URL(src);
+    const hostname = url.hostname.replace(/^www\./, "");
+
+    if (hostname === "youtu.be") {
+      return `https://www.youtube.com/embed/${url.pathname.slice(1)}`;
+    }
+
+    if (hostname === "youtube.com" || hostname === "m.youtube.com") {
+      const videoId = url.searchParams.get("v");
+
+      if (videoId) {
+        return `https://www.youtube.com/embed/${videoId}`;
+      }
+
+      if (url.pathname.startsWith("/embed/")) {
+        return src;
+      }
+    }
+  } catch {
+    return null;
+  }
+
+  return null;
+}
+
+function getYoutubePlayerSrc(src) {
+  try {
+    const url = new URL(src);
+
+    url.searchParams.set("enablejsapi", "1");
+
+    if (typeof window !== "undefined") {
+      url.searchParams.set("origin", window.location.origin);
+    }
+
+    return url.toString();
+  } catch {
+    return src;
+  }
+}
+
 function ProjectMedia({ className, controls = false, media, placeholder, title }) {
   const [hasError, setHasError] = useState(false);
+  const iframeRef = useRef(null);
+  const youtubeEmbedSrc = getYoutubeEmbedSrc(media?.src);
 
   useEffect(() => {
     setHasError(false);
   }, [media?.src]);
+
+  useEffect(() => {
+    if (!youtubeEmbedSrc || !media?.playbackRate) {
+      return undefined;
+    }
+
+    const setPlaybackRate = () => {
+      iframeRef.current?.contentWindow?.postMessage(
+        JSON.stringify({
+          event: "command",
+          func: "setPlaybackRate",
+          args: [media.playbackRate],
+        }),
+        "https://www.youtube.com",
+      );
+    };
+
+    setPlaybackRate();
+    const intervalId = window.setInterval(setPlaybackRate, 700);
+    const timeoutId = window.setTimeout(() => window.clearInterval(intervalId), 5000);
+
+    return () => {
+      window.clearInterval(intervalId);
+      window.clearTimeout(timeoutId);
+    };
+  }, [media?.playbackRate, youtubeEmbedSrc]);
 
   if (!media?.src || hasError) {
     return (
@@ -51,6 +126,20 @@ function ProjectMedia({ className, controls = false, media, placeholder, title }
         <span>Preview project</span>
         <strong className="text-carbon">{placeholder ?? title}</strong>
       </div>
+    );
+  }
+
+  if (youtubeEmbedSrc) {
+    return (
+      <iframe
+        className={className}
+        ref={iframeRef}
+        src={getYoutubePlayerSrc(youtubeEmbedSrc)}
+        title={media.alt ?? title}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+        loading="lazy"
+      />
     );
   }
 
@@ -163,11 +252,6 @@ export default function ProjectSection({ project }) {
       (currentIndex) =>
         (currentIndex + direction + projects.length) % projects.length,
     );
-  };
-
-  const handleModalWheel = (event) => {
-    event.stopPropagation();
-    modalContentRef.current?.scrollBy({ top: event.deltaY, behavior: "auto" });
   };
 
   return (
@@ -365,17 +449,15 @@ export default function ProjectSection({ project }) {
           aria-modal="true"
           aria-labelledby="project-modal-title"
           onMouseDown={() => setSelectedProject(null)}
-          onWheel={handleModalWheel}
           onTouchMove={(event) => event.stopPropagation()}
           >
           <motion.article
-            className={`${cardClass} h-[min(860px,calc(100vh_-_70px))] w-[min(1180px,100%)] overflow-y-scroll overscroll-contain bg-pure-white p-18 shadow-[10px_10px_0_0_var(--carbon)] md:p-26`}
+            className={`${cardClass} h-[min(860px,calc(100vh_-_70px))] w-[min(1180px,100%)] overflow-y-auto overscroll-contain scroll-smooth bg-pure-white p-18 shadow-[10px_10px_0_0_var(--carbon)] md:p-26`}
             ref={modalContentRef}
             initial={{ opacity: 0, y: 42, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
             onMouseDown={(event) => event.stopPropagation()}
-            onWheel={handleModalWheel}
             onTouchMove={(event) => event.stopPropagation()}
             data-lenis-prevent
           >

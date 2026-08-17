@@ -1,4 +1,4 @@
-﻿{
+{
   "navItems": [
     {
       "label": "Profile",
@@ -23,7 +23,8 @@
     "description": " Suka bikin website yang simpel, rapi, dan enak dipakai.",
     "image": "assets/photos/Foto%20Full%20Body.png",
     "imageAlt": "Foto full body Muhammad Ammar",
-    "cvHref": "assets/documents/cv-muhammad-ammar.pdf",
+    "cvHref": "assets/documents/CV_Muhammad Ammar.pdf",
+    "whatsappHref": "https://wa.me/6282151080750",
     "stats": [
       {
         "label": "Experience",
@@ -156,20 +157,30 @@
       "title": "Universitas Brawijaya",
       "description": "S1 Teknik Informatika | Agustus 2021 - Januari 2025",
       "highlight": "IPK 3,61 / 4,00",
-      "color": "bg-acid-lime"
+      "color": ""
     },
     {
       "eyebrow": "Organisasi",
       "title": "Head of Creative Media Division",
       "description": "IMKALBAR Universitas Brawijaya | Juni 2023 - Agustus 2024",
       "highlight": "Memimpin 8 anggota dan menghasilkan 40+ konten.",
-      "color": ""
+      "color": "bg-acid-lime",
+      "media": [
+        {
+          "src": "assets/photos/MediaCreative - Revisi 2.png",
+          "alt": "Preview karya media creative IMKALBAR"
+        },
+        {
+          "src": "assets/photos/umum1.png",
+          "alt": "Preview konten umum IMKALBAR"
+        }
+      ]
     }
   ],
   "contactIntro": {
     "eyebrow": "Kontak",
     "title": "Mari bekerja sama.",
-    "description": "Saya terbuka untuk peluang sebagai Web Developer, Back-End Developer, maupun Full-Stack Developer."
+    "description": "Saya terbuka untuk peluang sebagai Web Developer, Back-End Developer, Full-Stack Developer, maupun IT Support."
   },
   "contacts": [
     {
@@ -178,9 +189,9 @@
       "href": "mailto:ammareww512@gmail.com"
     },
     {
-      "label": "Telepon",
-      "value": "+62 821-5108-0750",
-      "href": "tel:+6282151080750"
+      "label": "WhatsApp",
+      "value": "Chat via WhatsApp",
+      "href": "https://wa.me/6282151080750"
     },
     {
       "label": "LinkedIn",
