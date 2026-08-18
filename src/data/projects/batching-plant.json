@@ -1,7 +1,7 @@
 {
   "title": "Duta Mix Batching Plant",
-  "eyebrow": "Operational System",
-  "description": "Sistem operasional ready-mix untuk menyatukan order, dispatch truk, loading, QC, gate, verifikasi, dan laporan trip.",
+  "eyebrow": "Operasional",
+  "description": "Sistem ready-mix untuk mengelola order, truk, loading, QC, gate, dan laporan trip.",
   "tags": [
     "Laravel",
     "Inertia React",
@@ -13,7 +13,7 @@
   "githubHref": "https://github.com/MAmmar21",
   "image": "assets/photos/Batching Plant/Batching Plant/WhatsApp Image 2026-06-18 at 12.35.02.jpeg",
   "imageAlt": "Preview Duta Mix Batching Plant",
-  "placeholder": "Duta Mix operational workflow",
+  "placeholder": "Alur operasional Duta Mix",
   "media": [
     {
       "type": "image",

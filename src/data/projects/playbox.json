@@ -1,7 +1,7 @@
 {
-  "title": "Playbox Rental System",
-  "eyebrow": "Booking & Operations",
-  "description": "Sistem rental PlayStation delivery untuk booking, jadwal, inventory unit, kurir, dan fondasi chatbot WhatsApp.",
+  "title": "Playbox Rental",
+  "eyebrow": "Booking",
+  "description": "Sistem rental PlayStation untuk booking, jadwal, inventory, kurir, dan chatbot WhatsApp.",
   "tags": [
     "Laravel",
     "Inertia React",

@@ -1,7 +1,7 @@
 {
   "name": "portofolio",
   "version": "1.0.0",
-  "description": "React portfolio frontend",
+  "description": "Portfolio frontend",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

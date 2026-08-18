@@ -1,4 +1,4 @@
-{
+﻿{
   "navItems": [
     {
       "label": "Profile",
@@ -20,7 +20,7 @@
     "eyebrow": "Halo, saya Muhammad Ammar",
     "titlePrefix": "Web",
     "titleAccent": "Developer",
-    "description": " Suka bikin website yang simpel, rapi, dan enak dipakai.",
+    "description": "Saya bikin website yang rapi, simpel, dan mudah dipakai.",
     "image": "assets/photos/Foto%20Full%20Body.png",
     "imageAlt": "Foto full body Muhammad Ammar",
     "cvHref": "assets/documents/CV_Muhammad Ammar.pdf",
@@ -68,7 +68,7 @@
   ],
   "about": {
     "eyebrow": "Tentang Saya",
-    "title": "Saya suka membangun web yang rapi, jelas, dan nyaman dipakai.",
+    "title": "Membangun web yang rapi dan mudah dipakai.",
     "paragraphs": [
       "Saya lulusan Teknik Informatika Universitas Brawijaya yang menikmati proses mengubah ide dan kebutuhan pengguna menjadi aplikasi web yang sederhana digunakan.",
       "Dalam pengalaman kerja, saya banyak berurusan dengan sistem internal seperti payroll, HRD, pendaftaran pasien, janji temu, dan laporan dokter. Saya juga terbiasa mendengarkan kendala pengguna langsung, lalu memperbaikinya dengan pendekatan yang praktis."
@@ -78,9 +78,9 @@
     {
       "role": "IT Software Staff",
       "company": "RS Mitra Medika Pontianak",
-      "period": "Mei 2025 - Juli 2026",
+      "period": "Mei 2025 - Agustus 2026",
       "color": "bg-sticker-yellow",
-      "description": "Mengembangkan dan memelihara sistem berbasis web untuk meningkatkan efisiensi operasional rumah sakit.",
+      "description": "Membangun dan merawat sistem web untuk operasional rumah sakit.",
       "points": [
         "Membangun sistem payroll, HRD, pendaftaran pasien, janji temu, serta laporan dokter.",
         "Menyelesaikan lebih dari 70 laporan kendala teknis setiap bulan.",
@@ -92,7 +92,7 @@
       "company": "PT Dicoding Akademi Indonesia",
       "period": "Mei 2024 - Juli 2024",
       "color": "bg-powder-blue",
-      "description": "Terlibat dalam pengembangan sistem rekomendasi pengguna baru untuk Dicoding Academy dan Dicoding Jobs.",
+      "description": "Membantu pengembangan sistem rekomendasi untuk Dicoding Academy dan Jobs.",
       "points": [
         "Mengembangkan tiga API dari model Machine Learning.",
         "Mengintegrasikan model ke layanan back-end.",
@@ -104,7 +104,7 @@
       "company": "Bangkit Academy",
       "period": "Februari 2024 - Juli 2024",
       "color": "bg-cotton-pink",
-      "description": "Mempelajari dasar hingga penerapan cloud computing melalui praktik langsung bersama praktisi industri.",
+      "description": "Belajar dan praktik cloud computing melalui program Bangkit Academy.",
       "points": [
         "Mempelajari layanan dan infrastruktur Google Cloud Platform.",
         "Mengembangkan REST API dan melakukan deployment ke cloud.",
@@ -114,17 +114,19 @@
   ],
   "skillsIntro": {
     "eyebrow": "Keahlian",
-    "title": "Stack yang saya gunakan untuk membangun produk web.",
-    "description": "Fokus pada Laravel, JavaScript, SQL, cloud deployment, dan sedang memperdalam React, Next.js, serta Golang."
+    "title": "Stack yang sering saya pakai.",
+    "description": "Laravel, JavaScript, SQL, cloud deployment, dan IT support untuk aplikasi internal."
   },
   "skills": [
     {
       "title": "Back-End",
+      "level": 8,
       "items": ["PHP", "Laravel", "REST API", "SQL", "Java", "Golang"],
       "color": ""
     },
     {
       "title": "Front-End",
+      "level": 7,
       "items": [
         "HTML",
         "CSS",
@@ -137,16 +139,20 @@
     },
     {
       "title": "Cloud & Tools",
+      "level": 4,
       "items": ["Google Cloud", "Cloud Run", "AWS", "Linux", "GitHub", "Figma"],
       "color": "bg-powder-blue"
     },
     {
-      "title": "Profesional",
+      "title": "Support",
+      "level": 8,
       "items": [
+        "IT Support",
+        "Troubleshooting",
+        "Maintenance",
+        "User Support",
         "Problem Solving",
-        "Critical Thinking",
-        "Collaboration",
-        "Adaptability"
+        "Collaboration"
       ],
       "color": "bg-cotton-pink"
     }
@@ -180,7 +186,7 @@
   "contactIntro": {
     "eyebrow": "Kontak",
     "title": "Mari bekerja sama.",
-    "description": "Saya terbuka untuk peluang sebagai Web Developer, Back-End Developer, Full-Stack Developer, maupun IT Support."
+    "description": "Terbuka untuk peluang Web Developer, Back-End, Full-Stack, atau IT Support."
   },
   "contacts": [
     {

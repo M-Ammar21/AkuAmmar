@@ -6,7 +6,7 @@ const projects = {
   eyebrow: "Projects & Experiences",
   heading: "Project Playground",
   description:
-    "Kumpulan sistem yang saya bangun, diringkas dari kebutuhan operasional dan aset preview terbaru.",
+    "Beberapa sistem yang pernah saya bangun untuk kebutuhan operasional.",
   items: [playboxProject, batchingPlantProject, hospitalProject],
 };
 

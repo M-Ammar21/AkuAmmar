@@ -1,14 +1,14 @@
 openapi: 3.1.0
 info:
-  title: Portofolio API
+  title: Portfolio API
   version: 1.0.0
-  description: API specification for the Portofolio project.
+  description: API untuk proyek portfolio.
   license:
     name: UNLICENSED
     identifier: UNLICENSED
 servers:
   - url: '{scheme}://{host}'
-    description: Configurable API server
+    description: Server API yang dapat diatur
     variables:
       scheme:
         default: http
@@ -26,7 +26,7 @@ paths:
       security: []
       responses:
         '200':
-          description: Application is running
+          description: Aplikasi berjalan
           content:
             application/json:
               schema:
@@ -38,8 +38,8 @@ paths:
                     type: string
                     example: ok
         '404':
-          description: Health endpoint was not found
+          description: Endpoint health tidak ditemukan
         '500':
-          description: Server error
+          description: Error server
 components:
   schemas: {}

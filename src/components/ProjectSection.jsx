@@ -5,7 +5,6 @@ import {
   cardClass,
   eyebrowClass,
   headingClass,
-  pillClass,
   sectionClass,
   tagClass,
 } from "./styles";
@@ -13,6 +12,38 @@ import {
 const sliderColors = ["bg-sticker-yellow", "bg-powder-blue", "bg-cotton-pink"];
 
 const coloredCardClass = cardClass.replace(" bg-pure-white", "");
+const compactPillClass =
+  "inline-flex min-h-[42px] items-center justify-center rounded-buttons border border-carbon px-[16px] text-[13px] font-medium no-underline transition-colors sm:min-h-[46px] sm:px-[20px] sm:text-sm";
+const projectCardPillClass =
+  "inline-flex h-[36px] w-[36px] shrink-0 items-center justify-center rounded-full border border-carbon text-[12px] font-medium no-underline transition-colors sm:h-auto sm:w-auto sm:min-h-[42px] sm:rounded-buttons sm:px-[16px] sm:text-[13px]";
+
+function ProjectActionIcon({ type }) {
+  const iconClass = "h-[15px] w-[15px] sm:hidden";
+
+  if (type === "detail") {
+    return (
+      <svg className={iconClass} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M3 12s3.4-6 9-6 9 6 9 6-3.4 6-9 6-9-6-9-6Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" strokeWidth="2" />
+      </svg>
+    );
+  }
+
+  if (type === "github") {
+    return (
+      <svg className={iconClass} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 2C6.48 2 2 6.59 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49v-1.9c-2.78.62-3.37-1.22-3.37-1.22-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.56 2.35 1.11 2.92.85.09-.67.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.08 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.3.1-2.72 0 0 .85-.28 2.75 1.05A9.29 9.29 0 0 1 12 6.93c.85 0 1.7.12 2.5.34 1.9-1.33 2.74-1.05 2.74-1.05.56 1.42.21 2.46.11 2.72.64.72 1.03 1.64 1.03 2.76 0 3.95-2.34 4.82-4.57 5.08.36.32.68.95.68 1.92v2.79c0 .27.18.59.69.49A10.23 10.23 0 0 0 22 12.25C22 6.59 17.52 2 12 2Z" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg className={iconClass} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M7 17 17 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <path d="M9 7h8v8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
 
 function getPrimaryMedia(project) {
   if (Array.isArray(project?.media) && project.media.length > 0) {
@@ -254,6 +285,19 @@ export default function ProjectSection({ project }) {
     );
   };
 
+  const liveDemoHref = activeProject.liveDemoHref ?? activeProject.demoHref;
+  const hasMultipleModalMedia = selectedMediaList.length > 1;
+  const goToModalMedia = (direction) => {
+    if (!hasMultipleModalMedia) {
+      return;
+    }
+
+    setSelectedMediaIndex(
+      (currentIndex) =>
+        (currentIndex + direction + selectedMediaList.length) % selectedMediaList.length,
+    );
+  };
+
   return (
     <>
       <motion.section
@@ -326,28 +370,38 @@ export default function ProjectSection({ project }) {
                 ))}
               </div>
 
-              <div className="mt-31 flex flex-wrap gap-13">
+              <div className="mt-26 flex flex-nowrap items-center gap-[8px] sm:mt-31 sm:flex-wrap sm:gap-9">
                 <button
-                  className={`${pillClass} bg-pure-white`}
+                  className={`${projectCardPillClass} bg-pure-white`}
                   type="button"
+                  aria-label={`Lihat detail ${activeProject.title}`}
                   onClick={() => setSelectedProject(activeProject)}
                 >
-                  Lihat Detail
+                  <ProjectActionIcon type="detail" />
+                  <span className="sr-only sm:not-sr-only">Lihat Detail</span>
                 </button>
                 <a
-                  className={`${pillClass} bg-pure-white`}
+                  className={`${projectCardPillClass} bg-pure-white`}
                   href={activeProject.githubHref}
                   target="_blank"
                   rel="noreferrer"
+                  aria-label={`Buka GitHub ${activeProject.title}`}
                 >
-                  GitHub
+                  <ProjectActionIcon type="github" />
+                  <span className="sr-only sm:not-sr-only">GitHub</span>
                 </a>
-                <a
-                  className={`${pillClass} bg-sticker-yellow text-carbon`}
-                  href="#kontak"
-                >
-                  Live Demo
-                </a>
+                {liveDemoHref ? (
+                  <a
+                    className={`${projectCardPillClass} bg-sticker-yellow text-carbon`}
+                    href={liveDemoHref}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Buka live demo ${activeProject.title}`}
+                  >
+                    <ProjectActionIcon type="demo" />
+                    <span className="sr-only sm:not-sr-only">Live Demo</span>
+                  </a>
+                ) : null}
               </div>
             </div>
 
@@ -410,7 +464,7 @@ export default function ProjectSection({ project }) {
           </div>
 
           <div className="mt-18 flex flex-col gap-13 border-t border-carbon pt-18 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex gap-9">
+            <div className="flex justify-center gap-9 sm:justify-start">
               {projects.map((item, index) => (
                 <button
                   className={`h-11 rounded-full border border-carbon transition-all ${index === activeIndex ? "w-35 bg-carbon" : "w-11 bg-pure-white"}`}
@@ -421,16 +475,16 @@ export default function ProjectSection({ project }) {
                 />
               ))}
             </div>
-            <div className="flex gap-13">
+            <div className="grid w-full grid-cols-2 gap-11 sm:flex sm:w-auto sm:gap-13">
               <button
-                className={`${pillClass} bg-pure-white`}
+                className={`${compactPillClass} w-full bg-pure-white sm:w-auto`}
                 type="button"
                 onClick={() => goToProject(-1)}
               >
                 Prev
               </button>
               <button
-                className={`${pillClass} bg-carbon text-pure-white`}
+                className={`${compactPillClass} w-full bg-carbon text-pure-white sm:w-auto`}
                 type="button"
                 onClick={() => goToProject(1)}
               >
@@ -443,7 +497,7 @@ export default function ProjectSection({ project }) {
 
       {selectedProject ? (
         <div
-          className="fixed inset-0 z-50 grid place-items-center overflow-y-auto overscroll-contain bg-carbon/55 px-16 py-35 backdrop-blur-sm"
+          className="fixed inset-0 z-50 grid items-start justify-items-center overflow-y-auto overscroll-contain bg-carbon/55 px-4 py-7 backdrop-blur-sm sm:place-items-center sm:px-16 sm:py-35"
           data-lenis-prevent
           role="dialog"
           aria-modal="true"
@@ -452,7 +506,7 @@ export default function ProjectSection({ project }) {
           onTouchMove={(event) => event.stopPropagation()}
           >
           <motion.article
-            className={`${cardClass} h-[min(860px,calc(100vh_-_70px))] w-[min(1180px,100%)] overflow-y-auto overscroll-contain scroll-smooth bg-pure-white p-18 shadow-[10px_10px_0_0_var(--carbon)] md:p-26`}
+            className={`${cardClass} max-h-[calc(100dvh_-_14px)] w-[min(1180px,calc(100%_-_6px))] overflow-y-auto overscroll-contain scroll-smooth bg-pure-white p-9 shadow-[4px_4px_0_0_var(--carbon)] sm:max-h-[calc(100dvh_-_70px)] sm:p-18 sm:shadow-[10px_10px_0_0_var(--carbon)] md:p-26`}
             ref={modalContentRef}
             initial={{ opacity: 0, y: 42, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -461,18 +515,18 @@ export default function ProjectSection({ project }) {
             onTouchMove={(event) => event.stopPropagation()}
             data-lenis-prevent
           >
-            <div className="mb-22 flex items-start justify-between gap-18">
-              <div>
-                <p className={eyebrowClass}>{selectedProject.eyebrow}</p>
+            <div className="mb-13 flex items-start justify-between gap-9 sm:mb-22 sm:gap-18">
+              <div className="min-w-0">
+                <p className={`${eyebrowClass} mb-9 text-[10px] sm:mb-18 sm:text-caption`}>{selectedProject.eyebrow}</p>
                 <h3
-                  className="max-w-[850px] text-[clamp(40px,6vw,76px)] font-semibold leading-[0.9] tracking-[-0.05em] text-carbon"
+                  className="max-w-[850px] break-words text-[clamp(28px,9vw,76px)] font-semibold leading-[0.94] tracking-[-0.05em] text-carbon sm:leading-[0.9]"
                   id="project-modal-title"
                 >
                   {selectedProject.title}
                 </h3>
               </div>
               <button
-                className="grid h-42 w-42 shrink-0 place-items-center rounded-full border border-carbon bg-sticker-yellow text-subheading leading-none"
+                className="grid h-31 w-31 shrink-0 place-items-center rounded-full border border-carbon bg-sticker-yellow text-[22px] leading-none sm:h-42 sm:w-42 sm:text-subheading"
                 type="button"
                 aria-label="Tutup detail project"
                 onClick={() => setSelectedProject(null)}
@@ -481,23 +535,44 @@ export default function ProjectSection({ project }) {
               </button>
             </div>
 
-            <div className="grid gap-22 xl:grid-cols-[minmax(0,1fr)_360px]">
+            <div className="grid gap-13 sm:gap-22 xl:grid-cols-[minmax(0,1fr)_360px]">
               <div className="min-w-0">
-                <div className="overflow-hidden rounded-cards border border-carbon bg-powder-blue p-11">
+                <div className="relative overflow-visible rounded-[12px] border border-carbon bg-powder-blue p-4 sm:rounded-cards sm:p-11">
                   <ProjectMedia
-                    className="aspect-video w-full rounded-[12px] border border-carbon bg-carbon object-contain"
+                    className="aspect-video w-full rounded-[8px] border border-carbon bg-carbon object-contain sm:rounded-[12px]"
                     controls
                     media={selectedModalMedia}
                     placeholder={selectedProject.placeholder}
                     title={selectedProject.title}
                   />
+
+                  {hasMultipleModalMedia ? (
+                    <>
+                      <button
+                        className="absolute left-[-6px] top-1/2 z-[30] grid h-[36px] w-[36px] -translate-y-1/2 place-items-center rounded-full bg-pure-white/35 text-[18px] font-semibold leading-none text-carbon backdrop-blur-sm transition hover:bg-pure-white/60 sm:left-[-10px] sm:h-[44px] sm:w-[44px] sm:text-[22px]"
+                        type="button"
+                        aria-label={`Media sebelumnya ${selectedProject.title}`}
+                        onClick={() => goToModalMedia(-1)}
+                      >
+                        {"<"}
+                      </button>
+                      <button
+                        className="absolute right-[-6px] top-1/2 z-[30] grid h-[36px] w-[36px] -translate-y-1/2 place-items-center rounded-full bg-pure-white/35 text-[18px] font-semibold leading-none text-carbon backdrop-blur-sm transition hover:bg-pure-white/60 sm:right-[-10px] sm:h-[44px] sm:w-[44px] sm:text-[22px]"
+                        type="button"
+                        aria-label={`Media berikutnya ${selectedProject.title}`}
+                        onClick={() => goToModalMedia(1)}
+                      >
+                        {">"}
+                      </button>
+                    </>
+                  ) : null}
                 </div>
 
-                {selectedMediaList.length > 1 ? (
-                  <div className="mt-13 flex gap-11 overflow-x-auto pb-6">
+                {hasMultipleModalMedia ? (
+                  <div className="mt-9 flex snap-x gap-7 overflow-x-auto pb-6 sm:mt-13 sm:gap-11">
                     {selectedMediaList.map((media, index) => (
                       <button
-                        className={`w-[150px] shrink-0 overflow-hidden rounded-[16px] border bg-pure-white p-5 transition ${index === selectedMediaIndex ? "border-carbon shadow-[4px_4px_0_0_var(--carbon)]" : "border-carbon/35 opacity-70 hover:opacity-100"}`}
+                        className={`w-[clamp(92px,32vw,150px)] shrink-0 snap-start overflow-hidden rounded-[12px] border bg-pure-white p-4 transition sm:rounded-[16px] sm:p-5 ${index === selectedMediaIndex ? "border-carbon shadow-[3px_3px_0_0_var(--carbon)] sm:shadow-[4px_4px_0_0_var(--carbon)]" : "border-carbon/35 opacity-70 hover:opacity-100"}`}
                         key={media.src}
                         type="button"
                         aria-label={`Lihat media ${index + 1} ${selectedProject.title}`}
@@ -515,12 +590,12 @@ export default function ProjectSection({ project }) {
                 ) : null}
               </div>
 
-              <aside className="rounded-cards border border-carbon bg-bone p-18 xl:sticky xl:top-0 xl:self-start">
-                <p className="text-body-lg leading-[1.5] text-ash-gray">
+              <aside className="rounded-[12px] border border-carbon bg-bone p-11 sm:rounded-cards sm:p-18 xl:sticky xl:top-0 xl:self-start">
+                <p className="text-sm leading-[1.45] text-ash-gray sm:text-body-lg sm:leading-[1.5]">
                   {selectedProject.description}
                 </p>
 
-                <div className="mt-18 flex flex-wrap gap-9">
+                <div className="mt-13 flex flex-wrap gap-7 sm:mt-18 sm:gap-9">
                   {selectedProject.tags.map((tag) => (
                     <span
                       className={tagClass}
@@ -531,28 +606,28 @@ export default function ProjectSection({ project }) {
                   ))}
                 </div>
 
-                <div className="mt-22 border-t border-carbon pt-18">
-                  <p className="mb-13 text-caption uppercase tracking-[0.13em] text-ash-gray">
+                <div className="mt-16 border-t border-carbon pt-13 sm:mt-22 sm:pt-18">
+                  <p className="mb-9 text-[10px] uppercase tracking-[0.13em] text-ash-gray sm:mb-13 sm:text-caption">
                     Yang Dikerjakan
                   </p>
-                  <ul className="m-0 grid list-none gap-11 p-0">
+                  <ul className="m-0 grid list-none gap-9 p-0 sm:gap-11">
                     {(
                       selectedProject.details ?? [selectedProject.videoHint]
                     ).map((detail) => (
                       <li
-                        className="flex gap-9 text-sm leading-[1.5] text-carbon"
+                        className="flex gap-7 text-[13px] leading-[1.45] text-carbon sm:gap-9 sm:text-sm sm:leading-[1.5]"
                         key={detail}
                       >
-                        <span className="mt-[7px] h-9 w-9 shrink-0 rounded-full border border-carbon bg-acid-lime" />
+                        <span className="mt-[6px] h-7 w-7 shrink-0 rounded-full border border-carbon bg-acid-lime sm:mt-[7px] sm:h-9 sm:w-9" />
                         <span>{detail}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="mt-22 flex flex-wrap gap-13">
+                <div className="mt-16 grid grid-cols-1 gap-9 sm:mt-22 sm:flex sm:flex-wrap sm:gap-13">
                   <a
-                    className={`${pillClass} bg-sticker-yellow text-carbon`}
+                    className={`${compactPillClass} w-full bg-sticker-yellow text-carbon sm:w-auto`}
                     href={selectedProject.githubHref}
                     target="_blank"
                     rel="noreferrer"
@@ -560,7 +635,7 @@ export default function ProjectSection({ project }) {
                     GitHub
                   </a>
                   <a
-                    className={`${pillClass} bg-pure-white text-ash-gray`}
+                    className={`${compactPillClass} w-full bg-pure-white text-ash-gray sm:w-auto`}
                     href="#kontak"
                     onClick={() => setSelectedProject(null)}
                   >
