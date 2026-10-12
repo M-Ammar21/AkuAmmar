@@ -59,3 +59,4 @@ public/assets/videos/*.mkv
 
 # Codex local workspace data
 .codex/
+.agents/
