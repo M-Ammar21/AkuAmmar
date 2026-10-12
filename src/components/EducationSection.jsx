@@ -150,12 +150,12 @@ export default function EducationSection({ items }) {
         <div>
           <p className={eyebrowClass}>Education & Organization</p>
           <h2 className={headingClass}>
-            Learning path yang membentuk cara kerja.
+            Tempat saya belajar, coba-coba, dan bertumbuh.
           </h2>
         </div>
         <p className="text-body-lg leading-[1.5] text-ash-gray">
-          Kombinasi latar akademik Teknik Informatika dan pengalaman organisasi
-          kreatif yang melatih problem solving, komunikasi, dan delivery.
+          Dari kuliah sampai organisasi, saya banyak belajar cara mikir rapi,
+          kerja bareng tim, dan menyelesaikan sesuatu sampai benar-benar jadi.
         </p>
       </motion.div>
 

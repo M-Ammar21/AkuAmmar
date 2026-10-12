@@ -1,5 +1,5 @@
 {
-  "title": "Duta Mix Batching Plant",
+  "title": "Batching Plant",
   "eyebrow": "Operasional",
   "description": "Sistem ready-mix untuk mengelola order, truk, loading, QC, gate, dan laporan trip.",
   "tags": [
@@ -12,44 +12,44 @@
   ],
   "githubHref": "https://github.com/MAmmar21",
   "image": "assets/photos/Batching Plant/Batching Plant/WhatsApp Image 2026-06-18 at 12.35.02.jpeg",
-  "imageAlt": "Preview Duta Mix Batching Plant",
-  "placeholder": "Alur operasional Duta Mix",
+  "imageAlt": "Preview Batching Plant",
+  "placeholder": "Alur operasional Batching Plant",
   "media": [
     {
       "type": "image",
       "src": "assets/photos/Batching Plant/Batching Plant/WhatsApp Image 2026-06-18 at 12.35.02.jpeg",
-      "alt": "Preview dashboard Duta Mix Batching Plant"
+      "alt": "Preview dashboard Batching Plant"
     },
     {
       "type": "video",
       "src": "https://youtu.be/kt7e7XcDw0w",
       "playbackRate": 2,
-      "alt": "Video demo Duta Mix Batching Plant"
+      "alt": "Video demo Batching Plant"
     },
     {
       "type": "image",
       "src": "assets/photos/Batching Plant/Batching Plant/WhatsApp Image 2026-06-18 at 12.35.02 (1).jpeg",
-      "alt": "Preview order dan dispatch Duta Mix"
+      "alt": "Preview order dan dispatch Batching Plan"
     },
     {
       "type": "image",
       "src": "assets/photos/Batching Plant/Batching Plant/WhatsApp Image 2026-06-18 at 12.35.02 (2).jpeg",
-      "alt": "Preview produksi dan QC Duta Mix"
+      "alt": "Preview produksi dan QC Batching Plant"
     },
     {
       "type": "image",
       "src": "assets/photos/Batching Plant/Batching Plant/WhatsApp Image 2026-06-18 at 12.35.03.jpeg",
-      "alt": "Preview gate dan driver Duta Mix"
+      "alt": "Preview gate dan driver Batching Plant"
     },
     {
       "type": "image",
       "src": "assets/photos/Batching Plant/Batching Plant/WhatsApp Image 2026-06-18 at 12.35.03 (1).jpeg",
-      "alt": "Preview laporan Duta Mix"
+      "alt": "Preview laporan Batching Plant"
     },
     {
       "type": "image",
       "src": "assets/photos/Batching Plant/Batching Plant/WhatsApp Image 2026-06-18 at 12.35.03 (2).jpeg",
-      "alt": "Preview monitoring Duta Mix"
+      "alt": "Preview monitoring Batching Plant"
     }
   ],
   "details": [

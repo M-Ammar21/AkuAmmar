@@ -1,4 +1,4 @@
-﻿{
+{
   "navItems": [
     {
       "label": "Profile",
@@ -68,10 +68,10 @@
   ],
   "about": {
     "eyebrow": "Tentang Saya",
-    "title": "Membangun web yang rapi dan mudah dipakai.",
+    "title": "Saya suka bikin web yang rapi, jelas, dan enak dipakai.",
     "paragraphs": [
-      "Saya lulusan Teknik Informatika Universitas Brawijaya yang menikmati proses mengubah ide dan kebutuhan pengguna menjadi aplikasi web yang sederhana digunakan.",
-      "Dalam pengalaman kerja, saya banyak berurusan dengan sistem internal seperti payroll, HRD, pendaftaran pasien, janji temu, dan laporan dokter. Saya juga terbiasa mendengarkan kendala pengguna langsung, lalu memperbaikinya dengan pendekatan yang praktis."
+      "Saya lulusan Teknik Informatika Universitas Brawijaya. Saya senang mengubah ide atau kebutuhan pengguna jadi aplikasi web yang terasa simpel dan nggak ribet dipakai.",
+      "Selama bekerja, saya cukup sering membangun dan merawat sistem internal seperti payroll, HRD, pendaftaran pasien, janji temu, sampai laporan dokter. Saya juga terbiasa ngobrol langsung dengan pengguna untuk memahami masalahnya, lalu mencari solusi yang paling masuk akal."
     ]
   },
   "experiences": [
@@ -115,7 +115,7 @@
   "skillsIntro": {
     "eyebrow": "Keahlian",
     "title": "Stack yang sering saya pakai.",
-    "description": "Laravel, JavaScript, SQL, cloud deployment, dan IT support untuk aplikasi internal."
+    "description": "Laravel, JavaScript, SQL, cloud deployment, server administration, dan IT support untuk aplikasi internal."
   },
   "skills": [
     {
@@ -138,9 +138,19 @@
       "color": "bg-bone"
     },
     {
-      "title": "Cloud & Tools",
-      "level": 4,
-      "items": ["Google Cloud", "Cloud Run", "AWS", "Linux", "GitHub", "Figma"],
+      "title": "DevOps & Infra",
+      "level": 6,
+      "items": [
+        "Google Cloud",
+        "Cloud Run",
+        "AWS",
+        "Linux",
+        "Ubuntu Server",
+        "Docker",
+        "MikroTik",
+        "GitHub",
+        "Figma"
+      ],
       "color": "bg-powder-blue"
     },
     {

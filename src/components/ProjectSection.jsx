@@ -22,25 +22,80 @@ function ProjectActionIcon({ type }) {
 
   if (type === "detail") {
     return (
-      <svg className={iconClass} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M3 12s3.4-6 9-6 9 6 9 6-3.4 6-9 6-9-6-9-6Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" strokeWidth="2" />
+      <svg
+        className={iconClass}
+        viewBox="0 0 24 24"
+        fill="none"
+        aria-hidden="true"
+      >
+        <path
+          d="M3 12s3.4-6 9-6 9 6 9 6-3.4 6-9 6-9-6-9-6Z"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+          stroke="currentColor"
+          strokeWidth="2"
+        />
       </svg>
     );
   }
 
   if (type === "github") {
     return (
-      <svg className={iconClass} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <svg
+        className={iconClass}
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        aria-hidden="true"
+      >
         <path d="M12 2C6.48 2 2 6.59 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49v-1.9c-2.78.62-3.37-1.22-3.37-1.22-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.56 2.35 1.11 2.92.85.09-.67.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.08 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.3.1-2.72 0 0 .85-.28 2.75 1.05A9.29 9.29 0 0 1 12 6.93c.85 0 1.7.12 2.5.34 1.9-1.33 2.74-1.05 2.74-1.05.56 1.42.21 2.46.11 2.72.64.72 1.03 1.64 1.03 2.76 0 3.95-2.34 4.82-4.57 5.08.36.32.68.95.68 1.92v2.79c0 .27.18.59.69.49A10.23 10.23 0 0 0 22 12.25C22 6.59 17.52 2 12 2Z" />
       </svg>
     );
   }
 
   return (
-    <svg className={iconClass} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M7 17 17 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-      <path d="M9 7h8v8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <svg
+      className={iconClass}
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M7 17 17 7"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M9 7h8v8"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function FullscreenIcon({ className = "h-[15px] w-[15px]" }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M8.5 3.5H3.5v5M3.8 3.8l6.4 6.4M15.5 20.5h5v-5M20.2 20.2l-6.4-6.4M20.5 8.5v-5h-5M20.2 3.8l-6.4 6.4M3.5 15.5v5h5M3.8 20.2l6.4-6.4"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }
@@ -116,7 +171,13 @@ function getYoutubePlayerSrc(src) {
   }
 }
 
-function ProjectMedia({ className, controls = false, media, placeholder, title }) {
+function ProjectMedia({
+  className,
+  controls = false,
+  media,
+  placeholder,
+  title,
+}) {
   const [hasError, setHasError] = useState(false);
   const iframeRef = useRef(null);
   const youtubeEmbedSrc = getYoutubeEmbedSrc(media?.src);
@@ -143,7 +204,10 @@ function ProjectMedia({ className, controls = false, media, placeholder, title }
 
     setPlaybackRate();
     const intervalId = window.setInterval(setPlaybackRate, 700);
-    const timeoutId = window.setTimeout(() => window.clearInterval(intervalId), 5000);
+    const timeoutId = window.setTimeout(
+      () => window.clearInterval(intervalId),
+      5000,
+    );
 
     return () => {
       window.clearInterval(intervalId);
@@ -153,7 +217,9 @@ function ProjectMedia({ className, controls = false, media, placeholder, title }
 
   if (!media?.src || hasError) {
     return (
-      <div className={`${className} grid place-content-center gap-7 p-18 text-center text-sm text-ash-gray`}>
+      <div
+        className={`${className} grid place-content-center gap-7 p-18 text-center text-sm text-ash-gray`}
+      >
         <span>Preview project</span>
         <strong className="text-carbon">{placeholder ?? title}</strong>
       </div>
@@ -237,6 +303,7 @@ export default function ProjectSection({ project }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [selectedProject, setSelectedProject] = useState(null);
   const [selectedMediaIndex, setSelectedMediaIndex] = useState(0);
+  const [isMediaFullscreen, setIsMediaFullscreen] = useState(false);
   const modalContentRef = useRef(null);
   const activeProject = projects[activeIndex];
   const selectedMediaList = selectedProject?.media?.length
@@ -252,6 +319,11 @@ export default function ProjectSection({ project }) {
 
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
+        if (isMediaFullscreen) {
+          setIsMediaFullscreen(false);
+          return;
+        }
+
         setSelectedProject(null);
       }
     };
@@ -268,10 +340,11 @@ export default function ProjectSection({ project }) {
       document.documentElement.style.overflow = previousHtmlOverflow;
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [selectedProject]);
+  }, [isMediaFullscreen, selectedProject]);
 
   useEffect(() => {
     setSelectedMediaIndex(0);
+    setIsMediaFullscreen(false);
   }, [selectedProject?.title]);
 
   if (!activeProject) {
@@ -294,8 +367,14 @@ export default function ProjectSection({ project }) {
 
     setSelectedMediaIndex(
       (currentIndex) =>
-        (currentIndex + direction + selectedMediaList.length) % selectedMediaList.length,
+        (currentIndex + direction + selectedMediaList.length) %
+        selectedMediaList.length,
     );
+  };
+
+  const closeSelectedProject = () => {
+    setIsMediaFullscreen(false);
+    setSelectedProject(null);
   };
 
   return (
@@ -313,8 +392,12 @@ export default function ProjectSection({ project }) {
           variants={fadeUp}
         >
           <div>
-            <p className={eyebrowClass}>{project?.eyebrow ?? activeProject.eyebrow}</p>
-            <h2 className={headingClass}>{project?.heading ?? "Project Playground"}</h2>
+            <p className={eyebrowClass}>
+              {project?.eyebrow ?? activeProject.eyebrow}
+            </p>
+            <h2 className={headingClass}>
+              {project?.heading ?? "Project Playground"}
+            </h2>
           </div>
           <p className="max-w-[420px] text-body-lg leading-[1.5] text-ash-gray">
             {project?.description ??
@@ -502,9 +585,9 @@ export default function ProjectSection({ project }) {
           role="dialog"
           aria-modal="true"
           aria-labelledby="project-modal-title"
-          onMouseDown={() => setSelectedProject(null)}
+          onMouseDown={closeSelectedProject}
           onTouchMove={(event) => event.stopPropagation()}
-          >
+        >
           <motion.article
             className={`${cardClass} max-h-[calc(100dvh_-_14px)] w-[min(1180px,calc(100%_-_6px))] overflow-y-auto overscroll-contain scroll-smooth bg-pure-white p-9 shadow-[4px_4px_0_0_var(--carbon)] sm:max-h-[calc(100dvh_-_70px)] sm:p-18 sm:shadow-[10px_10px_0_0_var(--carbon)] md:p-26`}
             ref={modalContentRef}
@@ -517,7 +600,11 @@ export default function ProjectSection({ project }) {
           >
             <div className="mb-13 flex items-start justify-between gap-9 sm:mb-22 sm:gap-18">
               <div className="min-w-0">
-                <p className={`${eyebrowClass} mb-9 text-[10px] sm:mb-18 sm:text-caption`}>{selectedProject.eyebrow}</p>
+                <p
+                  className={`${eyebrowClass} mb-9 text-[10px] sm:mb-18 sm:text-caption`}
+                >
+                  {selectedProject.eyebrow}
+                </p>
                 <h3
                   className="max-w-[850px] break-words text-[clamp(28px,9vw,76px)] font-semibold leading-[0.94] tracking-[-0.05em] text-carbon sm:leading-[0.9]"
                   id="project-modal-title"
@@ -529,7 +616,7 @@ export default function ProjectSection({ project }) {
                 className="grid h-31 w-31 shrink-0 place-items-center rounded-full border border-carbon bg-sticker-yellow text-[22px] leading-none sm:h-42 sm:w-42 sm:text-subheading"
                 type="button"
                 aria-label="Tutup detail project"
-                onClick={() => setSelectedProject(null)}
+                onClick={closeSelectedProject}
               >
                 ×
               </button>
@@ -545,6 +632,16 @@ export default function ProjectSection({ project }) {
                     placeholder={selectedProject.placeholder}
                     title={selectedProject.title}
                   />
+
+                  <button
+                    className="absolute bottom-7 right-7 z-[30] grid h-[38px] w-[38px] place-items-center rounded-full border border-carbon bg-pure-white/85 text-carbon shadow-[2px_2px_0_0_var(--carbon)] backdrop-blur-sm transition hover:bg-sticker-yellow sm:bottom-14 sm:right-14 sm:h-[44px] sm:w-[44px]"
+                    type="button"
+                    aria-label={`Buka media ${selectedProject.title} fullscreen`}
+                    title="Fullscreen"
+                    onClick={() => setIsMediaFullscreen(true)}
+                  >
+                    <FullscreenIcon className="h-[16px] w-[16px] sm:h-[18px] sm:w-[18px]" />
+                  </button>
 
                   {hasMultipleModalMedia ? (
                     <>
@@ -637,7 +734,7 @@ export default function ProjectSection({ project }) {
                   <a
                     className={`${compactPillClass} w-full bg-pure-white text-ash-gray sm:w-auto`}
                     href="#kontak"
-                    onClick={() => setSelectedProject(null)}
+                    onClick={closeSelectedProject}
                   >
                     Tanya Project
                   </a>
@@ -645,6 +742,78 @@ export default function ProjectSection({ project }) {
               </aside>
             </div>
           </motion.article>
+        </div>
+      ) : null}
+
+      {selectedProject && isMediaFullscreen ? (
+        <div
+          className="fixed inset-0 z-[70] flex bg-carbon/95 p-4 text-pure-white backdrop-blur-sm sm:p-9"
+          data-lenis-prevent
+          role="dialog"
+          aria-modal="true"
+          aria-label={`Media fullscreen ${selectedProject.title}`}
+          onMouseDown={() => setIsMediaFullscreen(false)}
+          onTouchMove={(event) => event.stopPropagation()}
+        >
+          <div
+            className="flex min-h-0 w-full flex-col gap-7 sm:gap-9"
+            onMouseDown={(event) => event.stopPropagation()}
+            onTouchMove={(event) => event.stopPropagation()}
+          >
+            <div className="flex items-center justify-between gap-9">
+              <div className="min-w-0">
+                <p className="text-[10px] uppercase tracking-[0.13em] text-pure-white/60 sm:text-caption">
+                  Media project
+                </p>
+                <p className="mt-3 truncate text-[15px] font-semibold text-pure-white sm:text-body-lg">
+                  {selectedProject.title}
+                  {hasMultipleModalMedia
+                    ? ` · ${selectedMediaIndex + 1}/${selectedMediaList.length}`
+                    : ""}
+                </p>
+              </div>
+
+              <button
+                className="grid h-[40px] w-[40px] shrink-0 place-items-center rounded-full border border-pure-white bg-sticker-yellow text-[24px] leading-none text-carbon transition hover:bg-pure-white sm:h-[48px] sm:w-[48px]"
+                type="button"
+                aria-label="Tutup fullscreen media"
+                onClick={() => setIsMediaFullscreen(false)}
+              >
+                ×
+              </button>
+            </div>
+
+            <div className="relative min-h-0 flex-1 rounded-[14px] border border-pure-white/30 bg-carbon p-3 sm:rounded-cards sm:p-5">
+              <ProjectMedia
+                className="h-full max-h-[calc(100dvh_-_96px)] w-full rounded-[10px] object-contain sm:max-h-[calc(100dvh_-_112px)] sm:rounded-[14px]"
+                controls
+                media={selectedModalMedia}
+                placeholder={selectedProject.placeholder}
+                title={selectedProject.title}
+              />
+
+              {hasMultipleModalMedia ? (
+                <>
+                  <button
+                    className="absolute left-4 top-1/2 z-[30] grid h-[40px] w-[40px] -translate-y-1/2 place-items-center rounded-full border border-carbon bg-pure-white/85 text-[20px] font-semibold leading-none text-carbon backdrop-blur-sm transition hover:bg-sticker-yellow sm:left-7 sm:h-[52px] sm:w-[52px] sm:text-[26px]"
+                    type="button"
+                    aria-label={`Media sebelumnya ${selectedProject.title}`}
+                    onClick={() => goToModalMedia(-1)}
+                  >
+                    {"<"}
+                  </button>
+                  <button
+                    className="absolute right-4 top-1/2 z-[30] grid h-[40px] w-[40px] -translate-y-1/2 place-items-center rounded-full border border-carbon bg-pure-white/85 text-[20px] font-semibold leading-none text-carbon backdrop-blur-sm transition hover:bg-sticker-yellow sm:right-7 sm:h-[52px] sm:w-[52px] sm:text-[26px]"
+                    type="button"
+                    aria-label={`Media berikutnya ${selectedProject.title}`}
+                    onClick={() => goToModalMedia(1)}
+                  >
+                    {">"}
+                  </button>
+                </>
+              ) : null}
+            </div>
+          </div>
         </div>
       ) : null}
     </>
